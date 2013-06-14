@@ -1,17 +1,22 @@
 (ns tomiyoc.database
-  (:use [compojure.core]
-        [ring.adapter.jetty :only (run-jetty)]
-        [ring.util.response :only (resource-response)])
-  (:require [compojure.handler :as handler]
-            [compojure.route :as route]
-            [net.cgrand.enlive-html :as h])
-  )
+  (use tomiyoc.options)
+  (:require [clojure.java.jdbc :as sql]))
 
-(defn init-db [optionen]
-  false)
+(def hsql-db {:subprotocol "hsqldb"
+              :subname "file:votedb"
+              :user "SA"
+              :password ""})
+
+(defn init-db []
+  (sql/with-connection hsql-db
+    (do
+      (sql/create-table :votes [:kartennr "varchar(16)"]
+        [:optionid "INTEGER"]))))
 
 (defn save-vote [optionsnummer kartennummer]
-  false)
+  (sql/with-connection hsql-db
+    (sql/insert-record :votes {:kartennr kartennummer
+                               :optionid optionsnummer})))
 
 (defn get-summary []
   {})

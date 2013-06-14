@@ -1,6 +1,7 @@
 (ns tomiyoc.handler
   (:use [compojure.core]
         [tomiyoc.view]
+        [tomiyoc.database]
         [ring.adapter.jetty :only (run-jetty)]
         [ring.util.response :only (resource-response)])
   (:require [compojure.handler :as handler]
@@ -18,5 +19,7 @@
 
 ;; Damit wird gestartet
 (defn -main [& args]
-  (run-jetty #'app {:port 80 :join? false}))
+  (do
+    (init-db optionsliste)
+    (run-jetty #'app {:port 8080 :join? false})))
 
