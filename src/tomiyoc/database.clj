@@ -21,4 +21,5 @@
       {:optionid optionsnummer, :kartennr kartennummer})))
 
 (defn get-summary []
-  {})
+  (let [votes (jdbc/query hsql-db (sql/select * :votes ))]
+    (frequencies (map #(:optionid %) votes))))
