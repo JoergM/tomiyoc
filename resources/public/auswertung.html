@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta charset="utf-8">
+<html>
+<head>
+    <script type="text/javascript" src="js/flotr2.min.js"></script>
+
+    <style>
+        #container {
+            height: 500px;
+            width: 660px;
+            margin: 80px;
+            background-color: #000;
+        }
+
+        body {
+            font-family: Arial, Helvetica;
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+<div id="container"></div>
+<script type="text/javascript">
+    var container = document.getElementById("container");
+
+
+       // MPi-dyn
+    var d1 =  [[1, 27]],
+     d2 =  [[2, 15]],
+     d3 =  [[3, 22]],
+     d4 =   [[4, 30]];
+
+    var bar1 = {data:d1,
+        bars:{
+            show:true,
+            barWidth:0.5
+            //color : '#fc6',
+            //fillColor: '#ff9',
+            //fillOpacity:0.6
+             }
+        ,
+                mouse: {
+                    track: true,
+                    relative: true
+                }
+    }
+    var bar2 = {data:d2,
+        bars:{
+            show:true,
+            barWidth:0.5
+            //color : '#fc6',
+            //fillColor: '#ff9',
+            //fillOpacity:0.6
+             }
+        ,
+                mouse: {
+                    track: true,
+                    relative: true
+                }
+    }
+    var bar3 = {data:d3,
+        bars:{
+            show:true,
+            barWidth:0.5
+            //color : '#fc6',
+            //fillColor: '#ff9',
+            //fillOpacity:0.6
+             }
+        ,
+                mouse: {
+                    track: true,
+                    relative: true
+                }
+    }
+    /*
+    var bar4 = {data:d4,
+        bars:{
+            show:true,
+            barWidth:0.5
+            //color : '#fc6',
+            //fillColor: '#ff9',
+            //fillOpacity:0.6
+             }
+        ,
+                mouse: {
+                    track: true,
+                    relative: true
+                }
+    }       */
+
+
+    var f = Flotr.draw(container,
+            // MPi-dyn - Mit Variante zu Oben
+            [ bar1, bar2, bar3,
+                { data: [[4, 23]], bars: { show: true, barWidth:0.5} },
+                { data: [[5, 13]], bars: { show: true, barWidth:0.5} }
+            ]
+            , {
+        xaxis:{
+            // MPi-dyn
+            noTicks:5,
+            // MPi-dyn
+            ticks:[
+                [1, "Prj 1"],
+                [2, "Prj 2"],
+                [3, "Prj 3"],
+                [4, "Prj 4"],
+                [5, "Prj 5"]
+            ]
+
+        },
+        yaxis:{
+
+         // MPi-dyn
+            ticks : [ 0 , 10, 20, 30, 35],
+            max:35,
+            min:0
+        },
+        grid : {
+           verticalLines : false,
+           horizontalLines : false
+         }
+        /*,
+        legend:{
+            position:'ne', // => position the legend 'south-east'.
+            backgroundColor:'#D2E8FF' // => a light blue background color.
+        }     */
+    });
+
+
+</script>
+</body>
+</html>
