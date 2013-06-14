@@ -1,0 +1,9 @@
+DISPLAY=:0.0 xinput list
+
+DISPLAY=:0.0 xinput list-props 9
+
+DISPLAY=:0.0 xinput set-prop 9 "Coordinate Transformation Matrix" 0 1 0 1 0 0 0 0 1
+
+DISPLAY=:0.0 xinput set-prop 9 "Coordinate Transformation Matrix" 0 1.1 -0.07 1.1 0 -0.1 0 0 1
+
+iceweasel --display=:0.0 -P Kiosk
