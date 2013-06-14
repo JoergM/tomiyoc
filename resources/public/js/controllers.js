@@ -16,6 +16,14 @@ function OptionsListCtrl($scope, $http) {
       {"id" : "8", "description": "Projekt 8"}]*/
 }
 
-function saveVote(id) {
-    console.log("vote: " + id);
+function saveVote(id, rfid) {
+    console.log("vote: " + id + " rfid: " + rfid);
+    $.ajax({
+        url: '/savevote?option=' +id+ '&karte=' + rfid,
+        type: 'PUT',
+        success: function(response) {
+            console.log("vote: " + id + " rfid: " + rfid + " success");
+            $('#top-layer').show();
+        }
+    });
 }
