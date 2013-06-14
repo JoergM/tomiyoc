@@ -1,0 +1,11 @@
+Teams und Themen
+Team 	Themen 	Präsentation
+  	
+- Customizing Twitter Feed -- Sponsor:Martin Klewitz
+- "Digital Signage" am Beispiel Raumbelegung -- Sponsor: AKo (als Proxy für Jörg Kuklinski)
+- Responsive EP2 Vorgangsmanagement für Tablets & Co -- Sponsor:Tobias Gesellchen
+- Kenne den Markt - welche Schätze stecken in den Daten der Market Engine -- Sponsor: Volker Kultermann
+- Voting-Terminal für den FedExDay und andere Events -- Sponsor: Oliver Otzen
+- Git Patch für lange Dateinamen (für Windows) -- Sponsor: Martin Kirst
+- Integrator - gehts auch etwas einfacher? -- Sponsor:Michael Grabow
+- iKlo - Statusanzeige der Verfügbarkeit unserer Toiletten -- Sponsor: René Häusler

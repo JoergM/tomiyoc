@@ -20,6 +20,6 @@ Then start the jar with java -jar.
 
 ## License
 
-Copyright © 2013 Oliver, Mathias, Joerg
+Copyright © 2013 Oliver, Matthias, Joerg
 
 Distributed under the Eclipse Public License, the same as Clojure.
