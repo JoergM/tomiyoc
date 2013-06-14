@@ -20,6 +20,6 @@
 ;; Damit wird gestartet
 (defn -main [& args]
   (do
-    (init-db optionsliste)
+    (init-db)
     (run-jetty #'app {:port 8080 :join? false})))
 
