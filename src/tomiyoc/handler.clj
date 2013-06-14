@@ -9,10 +9,15 @@
             [compojure.route :as route])
   (:gen-class ))
 
+(defn save-vote-handler [option karte]
+  (do (save-vote option karte)
+    "SUCCESS"))
+
 ;; Compojure Routes
 (defroutes app-routes
   (GET "/voting" [] voting-screen)
   (GET "/optionslist" [] options-as-json-response)
+  (GET "/savevote" {{option :option karte :karte} :params} (save-vote-handler option karte))
   (route/resources "/")
   (route/not-found "Not Found"))
 

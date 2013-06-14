@@ -14,11 +14,11 @@
       (jdbc/create-table :votes [:kartennr "varchar(16)"]
         [:optionid "INTEGER"]))))
 
-;;todo doppelte Eintragung verhindern
 (defn save-vote [optionsnummer kartennummer]
   (jdbc/with-connection hsql-db
-    (jdbc/insert-record :votes {:kartennr kartennummer
-                                :optionid optionsnummer})))
+    (jdbc/update-or-insert-values
+      :votes (sql/where {:kartennr kartennummer})
+      {:optionid optionsnummer, :kartennr kartennummer})))
 
 (defn get-summary []
   {})
