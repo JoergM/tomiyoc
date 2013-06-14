@@ -15,17 +15,19 @@
   <link rel="stylesheet" href="css/styles.css"/>
 
   <script type="text/javascript">
-    $(document).rfid = "";
-
+    rfid = "";
+    rfidForVote = "";
     $(document).keypress(function (e) {
       if (e.keyCode == 13) {
-        $("#rfid").html("<p>Rfid: " + $(document).rfid + "</p>");
+        $("#rfid").html("<p>Rfid: " + rfid + "</p>");
         $("#top-layer").hide();
-        $(document).rfid = "";
+        rfidForVote = rfid;
+        rfid = "";
+
       }
       else {
         var c = String.fromCharCode(e.keyCode);
-        $(document).rfid = $(document).rfid + c;
+        rfid = rfid + c;
       }
     });
 
@@ -52,13 +54,14 @@
   <div class="row opt" style="margin-top: 10px" ng-repeat="option in options">
     <div class="row opt" style="margin-top: 10px;">
       <div class="span6">
-        <h4>{{ option.description }}<h4>
+        <h4>{{ option.description }}</h4>
       </div>
       <div class="span4">
-        <button class="btn btn-success btn-large btn-block" style="height: 60px" onclick="saveVote('{{ option.id }}');">VOTE</button>
+        <button class="btn btn-success btn-large btn-block" style="height: 60px" onclick="saveVote('{{ option.id }}', rfidForVote);">VOTE</button>
       </div>
     </div>
   </div>
+</div>
 </div>
 
 </body>
