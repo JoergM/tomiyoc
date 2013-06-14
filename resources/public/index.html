@@ -14,23 +14,23 @@
 
     <link rel="stylesheet" href="css/styles.css"/>
 
-    <script type="text/javascript">
-        rfid = "";
-        rfidForVote = "";
-        $(document).keydown(function (e) {
-            if (e.keyCode == 13 && rfid.length == 10) {
-                e.preventDefault();
-                $("#top-layer").hide();
-                rfidForVote = rfid;
-                //$("#rfid").html("<p>Rfid: "+rfidForVote+", length: "+rfidForVote.length+"</p>");
-                rfid = "";
-            } else if (e.keyCode != 13) {
-                var c = String.fromCharCode(e.keyCode);
-                rfid = rfid + c;
-            }
-        });
+  <script type="text/javascript">
+      rfid = "";
+      rfidForVote = "";
+      $(document).keydown(function (e) {
+          if (e.keyCode == 13 && rfid.length == 10) {
+              e.preventDefault();
+              $("#top-layer").hide();
+              rfidForVote = rfid;
+              //$("#rfid").html("<p>Rfid: "+rfidForVote+", length: "+rfidForVote.length+"</p>");
+              rfid = "";
+          } else if (e.keyCode != 13) {
+              var c = String.fromCharCode(e.keyCode);
+              rfid = rfid + c;
+          }
+      });
 
-    </script>
+  </script>
 </head>
 
 <body>
@@ -62,7 +62,7 @@
             </div>
         </div>
     </div>
-</div>
+  </div>
 </div>
 
 <!--<div id="rfid"><p>Rfid:</p></div>-->
