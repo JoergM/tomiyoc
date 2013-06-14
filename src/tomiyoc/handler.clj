@@ -30,7 +30,7 @@
 (defroutes app-routes
   (GET "/voting" [] voting-screen)
   (GET "/optionslist" [] options-as-json-response)
-  (GET "/savevote" {{option :option karte :karte} :params} (save-vote-handler option karte))
+  (PUT "/savevote" {{option :option karte :karte} :params} (save-vote-handler option karte))
   (GET "/resultdata" [] resultdata)
   (GET "/summary" [] get-summary-wrapper)
   (route/resources "/")
