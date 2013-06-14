@@ -13,9 +13,26 @@
     <script src="js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="css/styles.css"/>
+
+    <script type="text/javascript">
+        $(document).rfid = "";
+
+        $(document).keypress(function(e){
+            if(e.keyCode == 13) {
+                $("#rfid").html("<p>Rfid: "+$(document).rfid+"</p>");
+                $("#top-layer").hide();
+                $(document).rfid = "";
+            } else {
+                var c = String.fromCharCode(e.keyCode);
+                $(document).rfid = $(document).rfid + c;
+            }
+        });
+
+    </script>
 </head>
 
-<body style="background: #252525; color: #ffffff">
+<body>
+<div id="top-layer"></div>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
@@ -37,12 +54,11 @@
                 <h3>{{ option.description }}</h3>
             </div>
             <div class="span4">
-                <button class="btn btn-success btn-large btn-block" style="height: 60px" >VOTE {{ option.id }}</button>
+                <button class="btn btn-success btn-large btn-block" style="height: 60px" onclick="saveVote('{{ option.id }}');" >VOTE</button>
             </div>
         </div>
     </div>
 </div>
-
 
 </body>
 
