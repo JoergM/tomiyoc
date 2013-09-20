@@ -17,3 +17,4 @@
 (defn options-as-json-response [request]
   (json/write-str
     (for [k (keys voting-options)] {"id" k, "description" (voting-options k)})))
+

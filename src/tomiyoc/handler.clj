@@ -17,7 +17,8 @@
 (defn resultdata [request]
   (let [values (get-summary)
         maxval (apply max (vals values))]
-    (json/write-str {:data (for [o (keys voting-options)] {:data [[o,(get values o)]] :bars {:show true :barWidth 0.5}})
+    (json/write-str {:data (for [o (keys voting-options)]
+                             {:data [[o,(get values o)]] :bars {:show true :barWidth 0.5}})
                      :ticks (for [k (keys voting-options)] [k (voting-options k)])
                      :max maxval
                      :yticks (concat (range 0 maxval (int (/ maxval 4))) [maxval])
@@ -44,4 +45,3 @@
   (do
     (init-db)
     (run-jetty #'app {:port 8080 :join? false})))
-
