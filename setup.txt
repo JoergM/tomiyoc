@@ -1,0 +1,9 @@
+1) Install wheezy-raspbian
+2.1) Install xinput config: sudo apt-get install xinput
+2.2) Configure Touchscreen (see "touchscreen settings.txt")
+3.1) Install Firefox (Icewasel): sudo apt-get install iceweasel
+3.2) Create a profile named "Kiosk" with the Firefox profile manager: iceweasel --display=:0.0 -P
+
+5.1) Build and copy tomiyoc (see README.md)
+5.2) Start tomiyoc: java -jar tomiyoc.jar
+6) Start Iceweasel:  iceweasel --display=:0.0 -P Kiosk localhost:8080/index.html
