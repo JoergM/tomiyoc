@@ -16,7 +16,7 @@
 
 (defn resultdata [request]
   (let [values (get-summary)
-        maxval (apply max (vals values))]
+        maxval (apply max (conj (vals values) 0))]
     (json/write-str {:data (for [o (keys voting-options)]
                              {:data [[o,(get values o)]] :bars {:show true :barWidth 0.5}})
                      :ticks (for [k (keys voting-options)] [k (voting-options k)])

@@ -1,0 +1,1 @@
+DISPLAY=:0.0 xinput set-prop `DISPLAY=:0.0 xinput list | grep eGalax |sed "s/.*id=\(.*\)\[.*/\1/"|sed -n 2p` "Coordinate Transformation Matrix" -0.01 1.07 -0.06 1.1 0 -0.08 0 0 1
